@@ -3,9 +3,19 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+### Bootstrap for css formatting
 gem 'bootstrap-sass', '~> 3.4.1'
 
+### Devise for user management
 gem 'devise'
+
+###Carrierwave for streamlined file uploads for Rails
+
+###Fog for image uploads to AWS S3
+
+###Mini_magic for post-cload upload image-resizing
+
+###Figaro for Heroku deployment secure local environment variable manipulation
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3'
