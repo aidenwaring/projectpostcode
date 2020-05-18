@@ -26,6 +26,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    #Assigns account_id with the id of the current user
     @post.account_id = current_account.id
     @post.code_image.attach(params[:post][:code_image])
 
