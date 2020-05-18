@@ -10,12 +10,11 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'devise'
 
 ###Carrierwave for streamlined file uploads for Rails
-
+gem 'carrierwave', "0.10.0"
 ###Fog for image uploads to AWS S3
-
+gem 'fog', '~> 1.37.0'
 ###Mini_magic for post-cload upload image-resizing
-
-###Figaro for Heroku deployment secure local environment variable manipulation
+gem 'mini_magick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3'
@@ -45,6 +44,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  ###Figaro for Heroku deployment secure local environment variable manipulation
+  gem "figaro"
 end
 
 group :development do
