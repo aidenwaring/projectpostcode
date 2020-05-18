@@ -11,5 +11,8 @@
       <h2><%= post.title %></h2> <!--title -->
       <p><%= post.description %></p> <!-- description -->
       <p><%= post.account_id %></p> <!-- account user name-->
+      <% if post.code_image.attached? %> 
+        <%= image_tag post.code_image, width: 120 %>
+      <% end %>
   </div>
 <% end %>
