@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   root to: "public#splash"
 
   get "/dashboard", to: "public#index"
+
+  resources :accounts
 end
