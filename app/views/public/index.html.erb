@@ -1,18 +1,18 @@
-<h1>Welcome to the home page!</h1>
-
-
-
-
-
-
+<h1>All Posts</h1>
 
 <% @posts.each do |post|%>
   <div>
-      <h2><%= post.title %></h2> <!--title -->
-      <p><%= post.description %></p> <!-- description -->
-      <p><%= post.account_id %></p> <!-- account user name-->
+      <h2>Title: <%= post.title %></h2> <!--title -->
+      <p>Description: <%= post.description %></p> <!-- description -->
+      <p>Account Number: <%= post.account_id %></p> <!-- account user name-->
       <% if post.code_image.attached? %> 
-        <%= image_tag post.code_image, width: 120 %>
+        <p>Code: <%= image_tag post.code_image, width: 120 %></p>
       <% end %>
+  </div>
+<% end %>
+
+<% @accounts.each do |account|%>
+  <div>
+      <h2><%= account.display_name %></h2> <!--title -->
   </div>
 <% end %>
