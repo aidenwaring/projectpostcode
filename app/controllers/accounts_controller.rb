@@ -3,9 +3,11 @@ class AccountsController < ApplicationController
   
   def index
     #user page
+    @accounts = Account.where(account_id: current_account.id)
   end
 
   def show
-    #user profile
   end
+
+  
 end
