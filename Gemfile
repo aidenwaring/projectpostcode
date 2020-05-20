@@ -9,6 +9,8 @@ gem 'bootstrap-sass', '~> 3.4.1'
 ### Devise for user management
 gem 'devise'
 
+gem 'rolify'
+
 ###Carrierwave for streamlined file uploads for Rails
 # gem 'carrierwave', "0.10.0"
 ###Fog for image uploads to AWS S3
