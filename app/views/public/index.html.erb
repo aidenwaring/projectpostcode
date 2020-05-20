@@ -8,14 +8,17 @@
       <% if post.code_image.attached? %> 
         <p>Code: <%= image_tag post.code_image, width: 120 %></p>
       <% end %>
+      <% if current_account.has_role?(:admin) %>
+        <h1>This is a test for admin</h1>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+      <% end %>
   </div>
 <% end %>
 
-<% if current_account.has_role?(:admin) %>
-        <h1>This is a test for admin</h1>
-  <% else %>
-        <h1>This does not work</h1>
-<% end %>
+
 
 <% @accounts.each do |account|%>
   <div>
