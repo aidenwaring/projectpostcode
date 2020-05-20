@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.where(account_id: current_account.id)
+    @accounts = Account.where(account_id: current_account.id)
   end
 
   # GET /posts/1
