@@ -6,5 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Admin = Account.create(email:"testing@test.com",display_name:"Admin",password:"Test12")
-Admin.add_role :Admin
+admin = Account.create!(email:"testing@test.com",display_name:"Admin",password:"Test12")
+admin.add_role :admin
+
+puts "Accounts: #{Account.count} created successfully."

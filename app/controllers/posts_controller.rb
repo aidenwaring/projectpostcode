@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_account!
+  before_action :authorize, only: :edit
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(account_id: current_account.id)
-    @accounts = Account.where(account_id: current_account.id)
+    @post = Post.where(account_id: current_account.id)
   end
 
   # GET /posts/1
@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    
   end
 
   # POST /posts
@@ -68,6 +69,13 @@ class PostsController < ApplicationController
   end
 
   private
+
+    def authorize
+      if (!current_account.has_role?(:admin) || @post.account.id != current_account.id)
+        flash[:alert] = "You are not authorized!"
+        redirect_to posts_path
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
