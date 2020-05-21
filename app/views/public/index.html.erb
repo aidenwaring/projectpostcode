@@ -7,7 +7,7 @@
         <p>Description: <%= post.description %></p> <!-- description -->
         <p>Account Number: <%= post.account_id %></p> <!-- account user name-->
         <% if post.code_image.attached? %> 
-          <p>Code: <%= image_tag post.code_image, width: 300 %></p>
+          <p>Code: <%= image_tag post.code_image, width: 600 %></p>
         <% end %>
         <%# If the user is an admin, provide edit links for each post %>
         <% if current_account.has_role?(:admin) %>

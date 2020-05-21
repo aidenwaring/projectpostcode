@@ -20,7 +20,7 @@
         <td><%= post.account_id %></td>
 
         <% if post.code_image.attached? %> 
-          <td><%= image_tag post.code_image, width: 300 %></td>
+          <td><%= image_tag post.code_image, width: 600 %></td>
         <% end %>
         <% if current_account.has_role?(:admin) || post.account_id == current_account.id%>
           <td><%= link_to 'Show', post %></td>
