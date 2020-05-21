@@ -2,26 +2,18 @@
 
 <% @posts.each do |post|%>
   <div>
-      <h2>Title: <%= post.title %></h2> <!--title -->
+      <h6>Title: <%= post.title %></h6> <!--title -->
       <p>Description: <%= post.description %></p> <!-- description -->
       <p>Account Number: <%= post.account_id %></p> <!-- account user name-->
       <% if post.code_image.attached? %> 
-        <p>Code: <%= image_tag post.code_image, width: 120 %></p>
+        <p>Code: <%= image_tag post.code_image, width: 300 %></p>
       <% end %>
+      <%# If the user is an admin, provide edit links for each post %>
       <% if current_account.has_role?(:admin) %>
-        <h1>This is a test for admin</h1>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% else %>
       <% end %>
-  </div>
-<% end %>
-
-
-
-<% @accounts.each do |account|%>
-  <div>
-      <h2><%= account.display_name %></h2> <!--title -->
   </div>
 <% end %>

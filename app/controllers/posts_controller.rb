@@ -71,11 +71,14 @@ class PostsController < ApplicationController
   private
 
     def authorize
-      if (!current_account.has_role?(:admin) || @post.account.id != current_account.id)
-        flash[:alert] = "You are not authorized!"
-        redirect_to posts_path
+      if !current_account.has_role? :admin
+        if @post.account.id != current_account.id 
+          flash[:alert] = "You are not authorized!"
+          redirect_to posts_path
+        end
       end
     end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
