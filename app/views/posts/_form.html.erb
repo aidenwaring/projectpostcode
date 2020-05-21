@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, :required => true %>
   </div>
 
   <div class="field">
@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :code_image %>
-    <%= form.file_field :code_image %>
+    <%= form.file_field :code_image, :required => true %>
   </div>
 
   <div class="actions">
