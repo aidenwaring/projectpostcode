@@ -11,6 +11,8 @@ gem 'devise'
 
 gem 'rolify'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 ###Carrierwave for streamlined file uploads for Rails
 # gem 'carrierwave', "0.10.0"
 ###Fog for image uploads to AWS S3
