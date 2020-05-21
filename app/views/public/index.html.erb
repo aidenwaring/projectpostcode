@@ -1,19 +1,21 @@
-<h1>All Posts</h1>
+<div class="text-center"> 
+  <h1>All Posts</h1>
 
-<% @posts.each do |post|%>
-  <div>
-      <h6>Title: <%= post.title %></h6> <!--title -->
-      <p>Description: <%= post.description %></p> <!-- description -->
-      <p>Account Number: <%= post.account_id %></p> <!-- account user name-->
-      <% if post.code_image.attached? %> 
-        <p>Code: <%= image_tag post.code_image, width: 300 %></p>
-      <% end %>
-      <%# If the user is an admin, provide edit links for each post %>
-      <% if current_account.has_role?(:admin) %>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% else %>
-      <% end %>
-  </div>
-<% end %>
+  <% @posts.each do |post|%>
+    <div>
+        <h6>Title: <%= post.title %></h6> <!--title -->
+        <p>Description: <%= post.description %></p> <!-- description -->
+        <p>Account Number: <%= post.account_id %></p> <!-- account user name-->
+        <% if post.code_image.attached? %> 
+          <p>Code: <%= image_tag post.code_image, width: 300 %></p>
+        <% end %>
+        <%# If the user is an admin, provide edit links for each post %>
+        <% if current_account.has_role?(:admin) %>
+          <td><%= link_to 'Show', post %></td>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% else %>
+        <% end %>
+    </div>
+  <% end %>
+</div>

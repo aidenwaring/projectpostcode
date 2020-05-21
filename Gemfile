@@ -6,20 +6,16 @@ ruby '2.7.0'
 ### Bootstrap for css formatting
 gem 'bootstrap-sass', '~> 3.4.1'
 
-### Devise for user management
+### Devise gem for user authentication
 gem 'devise'
 
+# Rolify gem used for user authorization
 gem 'rolify'
 
+# Stripe gem used for coder donation system
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-###Carrierwave for streamlined file uploads for Rails
-# gem 'carrierwave', "0.10.0"
-###Fog for image uploads to AWS S3
-# gem 'fog', '~> 1.37.0'
-###Mini_magic for post-cload upload image-resizing
-# gem 'mini_magick'
-
+# Cloudinary gem used for online image hosting
 gem 'cloudinary'
 gem 'activestorage-cloudinary-service'
 
